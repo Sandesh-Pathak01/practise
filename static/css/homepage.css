@@ -1,0 +1,149 @@
+
+
+.post-container {
+    width: 700px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.post-header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-avatar {
+    width: 90px;
+    height: 88px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-info {
+    flex-grow: 1;
+    margin-top: 1rem;
+}
+
+.post-content {
+    padding: 10px;
+}
+
+.like-button {
+    cursor: pointer;
+    color: #1877f2;
+}
+
+.like-count {
+    margin-left: 5px;
+    color: #606770;
+}
+
+.comments {
+    padding: 10px;
+}
+
+.comment {
+    margin-bottom: 10px;
+    margin-top: 1rem;
+    height: 120px;
+    overflow-y: scroll;
+    margin-bottom: 1rem;
+}
+
+/* Optional: Hover effect for social icons */
+.like-button:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+
+.postimg{
+    height: 400px;
+    width: 600px;
+    margin-left: 2.5rem;
+}
+
+.pub_date{
+    opacity: 0.7;
+    margin-top: -455px;
+}
+
+.author{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.user-info a{
+    margin-top: 1rem;
+}
+
+.post-container form input{
+    height: 35px;
+    width: 300px;
+    margin-left: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.post-container button{
+    margin-left: 10px;
+    height: 26px;
+    padding-top: 0px;
+    margin-bottom: 2rem;
+}
+
+.comment p{
+    display: block;
+    margin-bottom: 0px;
+}
+/* 
+#likebtn{
+    color: red;
+} */
+
+
+#post-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid grey;
+  }
+  
+  #post-container textarea {
+    width: 100%;
+    border: 1px solid gray;
+    resize: none;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  #post-container button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    padding: 3px 14px 6px 14px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+  }
+  
+  #post-container button:hover {
+    background-color: #0e5a96;
+  }
+
+  .spacing{
+    margin-top: 3rem;
+  }
