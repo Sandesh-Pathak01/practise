@@ -34,21 +34,27 @@
 
     <div class="post-content">
         <p>{{p.description}}</p>
-        <img class="postimg" src="{{ p.post_img.url }}" alt="">
+        <img class="postimg" src="{{ p.post_img.url }}" alt="Empty">
     </div>
 
-{% endfor %}
-
-
     <!-- comments -->
-
-
     
     <div class="comments">
-        <a id="likebtn" onclick="" href=""><i class="fa-regular fa-thumbs-up fa-lg"></i></a>
+
+        <form action="{% url 'like' %}" method="post">
+            {% csrf_token %}
+            
+            <input type="hidden" name="post_id" value="{{p.id}}">
+            <button type="submit">
+                    <i class="fa-solid fa-thumbs-up"></i>
+            </button> 
+            <p>&nbsp; {{p.likes.count}} Likes</p>
+           
+        </form>
+
         <div class="comment">
             <h4>Comment Section:</h4>
-            {% for c in comments %}
+            {% for c in p.post_comment.all %}
             <p><strong>{{c.name}}:</strong> {{c.comment}}</p>
             {% endfor %}
         </div>
@@ -57,11 +63,13 @@
     </div>
     <form action="{% url 'cmts' %}" method="POST">
         {% csrf_token %}
+        <input type="hidden" name="post_id" value="{{p.id}}">
         <input type="text" maxlength="200" placeholder="Write a comment" name="comment">
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
+{% endfor %}
 
 {% endblock %}
 

@@ -5,6 +5,8 @@ from django.core.validators import FileExtensionValidator
 # Create your models here.
 class profile(models.Model):
 
+
+    id = models.IntegerField(primary_key = True)
     name = models.CharField(max_length=50)
     birth = models.DateField(null=True, blank=True)
     gender = models.CharField(max_length=20)
@@ -24,11 +26,13 @@ class posts(models.Model):
     profile_pic = models.ForeignKey(profile, on_delete= models.CASCADE, null=True, blank=True)
     published_date = models.DateTimeField(auto_now_add=True)
     description = models.TextField()
+    likes = models.ManyToManyField(User, blank = True, related_name='likes')
     post_img = models.ImageField(upload_to='postedpictures', default='default.png', blank=True, null=True, validators=[FileExtensionValidator(allowed_extensions=['png', 'jpg', 'jpeg'])])
 
 
 class comments(models.Model):
 
+    post_comment = models.ForeignKey(posts, related_name = 'post_comment' , on_delete = models.CASCADE, blank = True, null = True)
     name = models.ForeignKey(User, on_delete=models.CASCADE)
     comment = models.CharField(max_length=50)
 

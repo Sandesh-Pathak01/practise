@@ -11,28 +11,27 @@
     <div class="details">
         <img id="editimage" src="{% static 'img/default.png' %}" alt="">
         <input type="file">
-        <h2 id="fullName"> <strong>Full Name:</strong> John Doe</h2>
-        <p id="email"> <strong>Email:</strong> john.doe@example.com</p>
-        <p id="address"> <strong>Address:</strong> 123 Main St, Cityville, USA</p>
-        <p id="bio"> <strong>Bio:<strong> <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></p>
-        <p id="gender"> <strong>Gender:</strong> <span> Male </span></p>
+        <h2 id="fullName"> <strong>Full Name:</strong> {{data.name}}</h2>
+        <p id="address"> <strong>Address:</strong> {{data.address}}</p>
+        <p id="bio"> <strong>Bio:<strong> <span> {{data.bio}}</span></p>
+        <p id="gender"> <strong>Gender:</strong> <span> {{data.gender}} </span></p>
         <hr>
         <h3>Edit Your Details Below:</h3>
         <hr>
         <form action="" method="post">
             {% csrf_token %}
             <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" name="fullName" value="John Doe">
-
+            <input type="text" id="fullName" name="fullName" value="{{data.name}}">
 
             <label for="address">Address:</label>
-            <input type="text" id="address" name="address" value="123 Main St, Cityville, USA">
+            <input type="text" id="address" name="address" value="{{data.address}}">
 
             <label for="bio">Bio:</label>
-            <textarea id="bio" name="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+            <textarea id="bio" name="bio">{{data.bio}}</textarea>
 
             <label for="gender">Gender:</label>
             <select id="gender" name="gender">
+                <option>{{data.gender}}</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>

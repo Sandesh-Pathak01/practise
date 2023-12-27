@@ -12,12 +12,11 @@
         <img id="editimage" src="{{ data.profile_pic.url }}" alt="">
         <input type="file">
         <h2 id="fullName" class="fieldsss"> <strong>Full Name:</strong> {{data.name}}</h2>
-        <p id="email" class="fieldsss" aria-placeholder="No-Email"> <strong>Email:</strong> {{data.email}}</p>
         <p id="address" class="fieldsss"> <strong>Address:</strong> {{data.address}}</p>
         <p id="bio" class="fieldsss"> <strong>Bio: </strong><span> {{data.bio}}</span></p>
         <p id="gender" class="fieldsss"> <strong>Gender:</strong> <span> {{data.gender}} </span></p>
         <hr>
-        <button type="button" class="btn btn-primary">Edit Profile</button>
+        <a href="Profilepage/{{data.id}}"><button type="button" class="btn btn-primary">Edit Profile</button></a>
         
     </div>
 </section>
