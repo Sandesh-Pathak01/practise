@@ -37,7 +37,9 @@ def profilepage(request, id):
 
         edited_data.save()
 
-        return redirect('profileedit')
+
+
+        return redirect('navprofile')
 
 
     context = {
@@ -48,7 +50,20 @@ def profilepage(request, id):
 
 
 @login_required(login_url='login')
-def profile(request):
+def profile(request, id):
+
+    data = models.profile.objects.get(id = id)
+
+    context = {
+        'data' : data,
+    }
+
+
+    return render(request, 'Firstprofile.html', context)
+
+
+@login_required(login_url='login')
+def nav_profile(request):
 
     data = models.profile.objects.get(username = request.user)
 

@@ -7,6 +7,7 @@
 
 {% block content %}
 
+
 <div id="post-container">
     <form action="{% url 'posts' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -27,7 +28,7 @@
     <div class="post-header">
         <img class="user-avatar" src="{{ p.profile_pic.profile_pic.url }}" alt="User Avatar">
         <div class="user-info">
-            <a href=""><p><span class="author">{{p.name}}</span></p></a>
+            <a href="/profile/{{p.profile_pic.id}}"><p><span class="author">{{p.name}}</span></p></a>
             <p>&nbsp; - <span class="pub_date">Posted on {{p.published_date}}</span></p>
         </div>
     </div>
